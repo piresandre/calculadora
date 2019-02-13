@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8"/>
+	<title>menu</title>
+    <link href="css/style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"/>
+    <!-- <script type="text/javascript" src="js/script.js"></script> -->
+    <script>
+        function adicionarNaTela(num){
+            document.form.textView.value = document.form.textView.value + num;
+            console.log(document.form.textView.value);
+
+        }
+
+        function equal(){
+            var exp = document.form.textView.value;
+            if(exp){
+                document.form.textView.value = eval(exp);
+            }
+        }
+
+        function clean(){
+            document.form.textView.value="";
+        }
+        
+    </script>   
+</head>
+<body>
+    <div class="fundo"></div>
+    <div class="main">
+        <form action="" name="form">
+            <input type="text" class="textView" name="textView">
+        </form>
+        <table>
+            <tr class="col-md-3">
+                <td><input class="button" type="button" value="C" onclick="clean()"></td>
+                <td><input class="button" type="button" value="%" onclick="adicionarNaTela('%')"></td>
+                <td><input class="button" type="button" value="/" onclick="adicionarNaTela('/')"></td>
+                <td><input class="button" type="button" value="*" onclick="adicionarNaTela('*')"></td>
+            </tr>
+            <tr class="col-md-3">
+                <td><input class="button" type="button" value="7" onclick="adicionarNaTela(7)"></td>
+                <td><input class="button" type="button" value="8" onclick="adicionarNaTela(8)"></td>
+                <td><input class="button" type="button" value="9" onclick="adicionarNaTela(9)"></td>
+                <td><input class="button" type="button" value="-" onclick="adicionarNaTela('-')"></td>
+            </tr>
+            <tr class="col-md-3">
+                <td><input class="button" type="button" value="4" onclick="adicionarNaTela(4)"></td>
+                <td><input class="button" type="button" value="5" onclick="adicionarNaTela(5)"></td>
+                <td><input class="button" type="button" value="6" onclick="adicionarNaTela(6)"></td>
+                <td><input class="button" type="button" value="+" onclick="adicionarNaTela('+')"></td>
+            </tr>
+            <tr class="col-md-3">
+                <td><input class="button" type="button" value="1" onclick="adicionarNaTela(1)"></td>
+                <td><input class="button" type="button" value="2" onclick="adicionarNaTela(2)"></td>
+                <td><input class="button" type="button" value="3" onclick="adicionarNaTela(3)"></td>
+                <td rowspan="2"><input id="equal" class="button" type="button" value="=" onclick="equal()"></td>
+            </tr>
+            <tr>
+                    <td colspan="2"><input id="zero" class="button" type="button" value="0" onclick="adicionarNaTela(0)"></td>
+                    <td><input class="button" type="button" value="." onclick="adicionarNaTela('.')"></td>
+            </tr>
+            
+        </table>
+    </div>
+
+</body> 
+</html>
